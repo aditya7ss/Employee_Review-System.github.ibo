@@ -3,7 +3,10 @@ const express = require('express');
 const cookieParser = require('cookie-parser'); // parse cookie header and populate req.cookies
 const bodyParser = require('body-parser'); // parses incoming request bodies (req.body)
 const app = express();
-const { PORT, MONGODB_URL, SESSION_SECRET_KEY } = process.env;
+// const { PORT, MONGODB_URL, SESSION_SECRET_KEY } = process.env;
+const PORT = 8000;
+const SESSION_SECRET_KEY ="Random";
+
 const expressLayouts = require('express-ejs-layouts');
 
 // used for session cookie
@@ -36,7 +39,8 @@ app.use(
       maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create({
-      mongoUrl: MONGODB_URL,
+      mongoUrl:'mongodb://localhost:27017' ,
+
       autoRemove: 'disabled',
     }),
     function(err) {
