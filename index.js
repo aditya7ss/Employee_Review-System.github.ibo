@@ -39,7 +39,7 @@ app.use(
       maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create({
-      mongoUrl:'mongodb://localhost:27017' ,
+      mongoUrl:'mongodb://0.0.0.0:27017' ,
 
       autoRemove: 'disabled',
     }),

@@ -3,9 +3,10 @@ require('dotenv').config();
 
 exports.connect = () => {
   mongoose
-    .connect('mongodb://localhost:27017', {
+    .connect('mongodb://0.0.0.0:27017', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+     
     })
     .then(console.log('DB CONNECTED SUCCESSFULLY'))
     .catch((err) => {
